@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 			animation.play("Walk Down")
 			pass
 	velocity = position.direction_to(target) * speed
-	if position.distance_to(target) > 15:
+	if position.distance_to(target) > 10:
 		move_and_slide()
 	else:
 		animation.stop()
