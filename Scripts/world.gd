@@ -1,21 +1,25 @@
+class_name World
 extends Node2D
 
-var units: Array = []
+var units: Array[Unit] = []
 
 func _ready() -> void:
-	units = get_tree().get_nodes_in_group("units")
+	var test := get_tree().get_nodes_in_group("units")
+	print(units)
+	print(typeof(test))
+	#units = test
 
-func _on_area_selected(object: Node2D) -> void:
-	var start = object.start
-	var end = object.end
+func _on_area_selected(object: Camera) -> void:
+	var start := object.start
+	var end := object.end
 	# [0] = Vecteur associé au moment du clic
 	# [1] = Vecteur associé au release du clic
 	var area: Array[Vector2] = [
-		Vector2(min(start.x, end.x), min(start.y, end.y)), 
-		Vector2(max(start.x, end.x), max(start.y, end.y))
+		Vector2(min(start.x, end.x) as float, min(start.y, end.y) as float), 
+		Vector2(max(start.x, end.x) as float, max(start.y, end.y) as float)
 	]
 
-	var units_selected = get_units_in_area(area)
+	var units_selected := get_units_in_area(area)
 	for unit in units:
 		# Avant de sélectionner les unités, on va toutes les déselectionner au préalable
 		unit.set_selected(false)
@@ -25,8 +29,8 @@ func _on_area_selected(object: Node2D) -> void:
 
 	print("Selected ", units_selected.size(), " unit", "s" if units_selected.size() > 1 else "")
 
-func get_units_in_area(area: Array[Vector2]) -> Array:
-	var units_selected = []
+func get_units_in_area(area: Array[Vector2]) -> Array[Unit]:
+	var units_selected: Array[Unit] = []
 	for unit in units:
 		if unit.position.x >= area[0].x and unit.position.x <= area[1].x and unit.position.y >= area[0].y and unit.position.y <= area[1].y:
 			"""
