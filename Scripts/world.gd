@@ -4,11 +4,9 @@ extends Node2D
 var units: Array[Unit] = []
 
 func _ready() -> void:
-	var test := get_tree().get_nodes_in_group("units")
-	print(units)
-	print(typeof(test))
-	#units = test
-
+	var array := get_tree().get_nodes_in_group("units")
+	units.assign(array)
+	
 func _on_area_selected(object: Camera) -> void:
 	var start := object.start
 	var end := object.end
