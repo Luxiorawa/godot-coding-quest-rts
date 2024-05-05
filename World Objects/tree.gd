@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	currentTime -= 1 * units
 	var tween := get_tree().create_tween()
-	tween.tween_property(progressBar, "value", currentTime, 0.5).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(progressBar, "value", currentTime, 0.2).set_trans(Tween.TRANS_LINEAR)
 	
 func _on_chop_area_body_entered(body:Node2D) -> void:
 	if "Unit" in body.name:
@@ -35,4 +35,5 @@ func startChopping() -> void:
 	timer.start()
 
 func treeChopped() -> void:
+	Game.Wood += 10
 	queue_free()

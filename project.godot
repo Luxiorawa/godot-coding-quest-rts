@@ -16,6 +16,10 @@ run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*res://Global/game.gd"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1

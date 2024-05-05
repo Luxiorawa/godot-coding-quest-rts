@@ -40,7 +40,7 @@ position = Vector2(123, 136)
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Tree" parent="Objects" instance=ExtResource("5_grsx7")]
-position = Vector2(202, 54)
+position = Vector2(199, 53)
 
 [node name="Tree2" parent="Objects" instance=ExtResource("5_grsx7")]
 position = Vector2(199, 98)
