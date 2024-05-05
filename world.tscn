@@ -14,6 +14,11 @@ zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
 script = ExtResource("1_lux2x")
+speed = null
+zoom_speed = null
+zoom_margin = null
+zoom_min = null
+zoom_max = null
 
 [node name="UI" parent="." instance=ExtResource("1_x7c0n")]
 
