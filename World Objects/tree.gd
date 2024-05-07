@@ -6,7 +6,6 @@ var units := 0
 @onready var progressBar: ProgressBar = $ProgressBar
 @onready var timer: Timer = $Timer
 
-
 func _ready() -> void:
 	currentTime = totalTime
 	progressBar.max_value = totalTime

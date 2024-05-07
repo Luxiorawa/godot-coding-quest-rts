@@ -1,13 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn1v7vwfw2kxx"]
+[gd_scene load_steps=8 format=3 uid="uid://cn1v7vwfw2kxx"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_ip1q2"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="1_lux2x"]
 [ext_resource type="PackedScene" uid="uid://clt8glnw8snt7" path="res://UI/UI.tscn" id="1_x7c0n"]
+[ext_resource type="Texture2D" uid="uid://i10bximvko5u" path="res://images/MiniWorldSprites/Ground/TexturedGrass.png" id="2_v2o3q"]
 [ext_resource type="PackedScene" uid="uid://ckqjofc734gxc" path="res://Unit/unit.tscn" id="3_p0cuk"]
 [ext_resource type="PackedScene" uid="uid://btxgm5xx5k723" path="res://World Objects/tree.tscn" id="5_grsx7"]
+[ext_resource type="PackedScene" uid="uid://dlyyviojwkopk" path="res://Houses/BarbHouse.tscn" id="7_jcmmf"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ip1q2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 5000.0
+offset_bottom = 5000.0
+texture = ExtResource("2_v2o3q")
+stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -23,12 +32,13 @@ zoom_max = null
 [node name="UI" parent="." instance=ExtResource("1_x7c0n")]
 
 [node name="Units" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Unit" parent="Units" instance=ExtResource("3_p0cuk")]
 position = Vector2(45, 136)
 
 [node name="Unit2" parent="Units" instance=ExtResource("3_p0cuk")]
-position = Vector2(120, 56)
+position = Vector2(121, 56)
 
 [node name="Unit3" parent="Units" instance=ExtResource("3_p0cuk")]
 position = Vector2(44, 96)
@@ -43,6 +53,7 @@ position = Vector2(47, 56)
 position = Vector2(123, 136)
 
 [node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Tree" parent="Objects" instance=ExtResource("5_grsx7")]
 position = Vector2(199, 53)
@@ -52,3 +63,12 @@ position = Vector2(199, 98)
 
 [node name="Tree3" parent="Objects" instance=ExtResource("5_grsx7")]
 position = Vector2(199, 147)
+
+[node name="Houses" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="BarbHouse" parent="Houses" instance=ExtResource("7_jcmmf")]
+position = Vector2(81, 172)
+
+[node name="BarbHouse2" parent="Houses" instance=ExtResource("7_jcmmf")]
+position = Vector2(280, 175)

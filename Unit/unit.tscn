@@ -52,9 +52,8 @@ _data = {
 "Walk Down": SubResource("Animation_xrh7d")
 }
 
-[node name="Unit" type="CharacterBody2D" groups=["units"]]
+[node name="Unit" type="CharacterBody2D"]
 script = ExtResource("1_q4vlp")
-selected = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
@@ -66,7 +65,7 @@ texture = ExtResource("1_1cmfu")
 hframes = 5
 vframes = 8
 
-[node name="Box" type="Panel" parent="."]
+[node name="Selected" type="Panel" parent="."]
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 8.0

@@ -4,6 +4,9 @@ extends Node2D
 var units: Array[Unit] = []
 
 func _ready() -> void:
+	load_units()
+
+func load_units() -> void:
 	var array := get_tree().get_nodes_in_group("units")
 	units.assign(array)
 	
@@ -23,9 +26,7 @@ func _on_area_selected(object: Camera) -> void:
 		unit.set_selected(false)
 		
 	for unit in units_selected:
-		unit.set_selected(!unit.selected)
-
-	print("Selected ", units_selected.size(), " unit", "s" if units_selected.size() > 1 else "")
+		unit.set_selected(!unit.isSelected)
 
 func get_units_in_area(area: Array[Vector2]) -> Array[Unit]:
 	var units_selected: Array[Unit] = []
