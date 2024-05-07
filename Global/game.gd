@@ -3,6 +3,7 @@ extends Node
 @onready var spawnUI := preload("res://Global/spawn_unit.tscn")
 
 var Wood := 0
+var Coin := 0
 
 func spawnUnitUI(unitPosition: Vector2) -> void:
 	var path := get_tree().get_root().get_node("World/UI")
