@@ -8,7 +8,7 @@ func spawnUnitUI(unitPosition: Vector2) -> void:
 	var path := get_tree().get_root().get_node("World/UI")
 
 	if path.get_node_or_null("SpawnUnit"):
-		return;
+		return
 
 	var unitSpawnUI: SpawnUnit = spawnUI.instantiate()
 	unitSpawnUI.housePosition = unitPosition 
