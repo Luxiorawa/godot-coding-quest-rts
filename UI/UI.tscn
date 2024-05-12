@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://clt8glnw8snt7"]
+[gd_scene load_steps=4 format=3 uid="uid://clt8glnw8snt7"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_exb72"]
+[ext_resource type="PackedScene" uid="uid://bcghahyx1x75l" path="res://UI/mini-map.tscn" id="2_1vjdu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7fj2"]
 bg_color = Color(0, 0.129412, 0.0862745, 0.529412)
@@ -19,3 +20,5 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_b7fj2")
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Mini-map" parent="." instance=ExtResource("2_1vjdu")]

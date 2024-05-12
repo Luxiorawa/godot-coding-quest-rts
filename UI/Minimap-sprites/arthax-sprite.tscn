@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btop8sevj08ln"]
+
+[ext_resource type="Texture2D" uid="uid://cwdlhhojrafls" path="res://images/MiniWorldSprites/Characters/Champions/Arthax.png" id="1_gyfym"]
+
+[node name="Arthax" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gyfym")
+hframes = 5
+vframes = 8
