@@ -33,7 +33,7 @@ show_percentage = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="Resources" type="Sprite2D" parent="."]
+[node name="CoinHouseSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 scale = Vector2(2, 2)
 texture = ExtResource("1_wydhk")
