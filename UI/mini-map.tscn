@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcghahyx1x75l"]
 
 [ext_resource type="Texture2D" uid="uid://i10bximvko5u" path="res://images/MiniWorldSprites/Ground/TexturedGrass.png" id="1_g8isd"]
-[ext_resource type="Script" path="res://UI/SubViewportContainer.gd" id="1_q4l6w"]
+[ext_resource type="Script" path="res://UI/SubViewport.gd" id="1_h807f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7e71"]
 bg_color = Color(0, 0.196078, 0.392157, 1)
@@ -38,12 +38,12 @@ offset_top = 496.0
 offset_right = 1279.0
 offset_bottom = 776.0
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_q4l6w")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(280, 280)
 render_target_update_mode = 4
+script = ExtResource("1_h807f")
 
 [node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport"]
 offset_right = 5000.0
@@ -59,3 +59,9 @@ limit_top = 0
 
 [node name="Units" type="Node2D" parent="SubViewportContainer/SubViewport"]
 y_sort_enabled = true
+
+[node name="Objects" type="Node2D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Houses" type="Node2D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Ressources" type="Node2D" parent="SubViewportContainer/SubViewport"]

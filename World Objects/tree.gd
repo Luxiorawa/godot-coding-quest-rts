@@ -1,3 +1,4 @@
+class_name TreeWorldObject
 extends StaticBody2D
 
 var totalTime := 5

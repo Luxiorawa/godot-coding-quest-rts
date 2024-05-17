@@ -5,7 +5,13 @@ extends Node2D
 var housePosition := Vector2(300, 300)
 
 func _on_yes_pressed() -> void:
-	var unitPath: Node2D = get_tree().get_root().get_node("World/Units")
+	var root := get_tree().get_root()
+	var unitPath: Node2D = root.get_node("World/Units")
+	
+	# Dans la fonction _ready() de la minimap, il y'a la fonction updateMap() qui va récupérer les différents "objets" instantié dans le jeu, et les "recréer" dans la minimap.
+	var minimapPath: Minimap = root.get_node("World/UI/Mini-map/SubViewportContainer/SubViewport")
+	minimapPath._ready()
+
 	var newUnit: Unit = unit.instantiate()
 
 	var rng := RandomNumberGenerator.new()

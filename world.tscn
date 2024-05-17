@@ -50,14 +50,16 @@ position = Vector2(180, 75)
 [node name="Tree3" parent="Objects" instance=ExtResource("5_grsx7")]
 position = Vector2(180, 124)
 
-[node name="coinHouse" parent="Objects" instance=ExtResource("7_7t85d")]
-position = Vector2(32, 127)
-
-[node name="coinHouse2" parent="Objects" instance=ExtResource("7_7t85d")]
-position = Vector2(104, 126)
-
 [node name="Houses" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="BarbHouse" parent="Houses" instance=ExtResource("7_jcmmf")]
-position = Vector2(31, 25)
+position = Vector2(27, 23)
+
+[node name="Ressources" type="Node2D" parent="."]
+
+[node name="coinHouse" parent="Ressources" instance=ExtResource("7_7t85d")]
+position = Vector2(32, 127)
+
+[node name="coinHouse2" parent="Ressources" instance=ExtResource("7_7t85d")]
+position = Vector2(104, 126)
