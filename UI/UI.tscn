@@ -22,3 +22,4 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Mini-map" parent="." instance=ExtResource("2_1vjdu")]
+mouse_filter = 1
