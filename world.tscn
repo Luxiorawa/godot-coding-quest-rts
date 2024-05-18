@@ -48,6 +48,12 @@ y_sort_enabled = true
 [node name="BarbHouse" parent="Houses" instance=ExtResource("7_jcmmf")]
 position = Vector2(76, 55)
 
+[node name="BarbHouse2" parent="Houses" instance=ExtResource("7_jcmmf")]
+position = Vector2(346, 115)
+
+[node name="BarbHouse3" parent="Houses" instance=ExtResource("7_jcmmf")]
+position = Vector2(608, 241)
+
 [node name="Ressources" type="Node2D" parent="."]
 
 [node name="coinHouse" parent="Ressources" instance=ExtResource("7_7t85d")]

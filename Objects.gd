@@ -4,8 +4,8 @@ extends Node2D
 @onready var house := preload("res://Houses/coin_house.tscn")
 
 const tileSize := 16
-const gridSize := Vector2(160, 160)
-const numberOfTree := 20
+const gridSize := Vector2(2500, 1000)
+const numberOfTree := 100
 
 var grid: Array[Array] = []
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 		var gridPosition := Vector2(xCoords, yCoords)
 		if not gridPosition in positions:
 			var newTree: TreeWorldObject = tree.instantiate()
-			newTree.position = gridPosition * tileSize
+			newTree.position = gridPosition
 			newTree.name = "Tree" + str(treePlaced)
 			add_child(newTree)
 			positions.append(gridPosition)
