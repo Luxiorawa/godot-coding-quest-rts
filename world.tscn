@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://clt8glnw8snt7" path="res://UI/UI.tscn" id="1_x7c0n"]
 [ext_resource type="Texture2D" uid="uid://i10bximvko5u" path="res://images/MiniWorldSprites/Ground/TexturedGrass.png" id="2_v2o3q"]
 [ext_resource type="PackedScene" uid="uid://ckqjofc734gxc" path="res://Unit/unit.tscn" id="3_p0cuk"]
-[ext_resource type="PackedScene" uid="uid://btxgm5xx5k723" path="res://World Objects/tree.tscn" id="5_grsx7"]
+[ext_resource type="Script" path="res://Objects.gd" id="6_du07w"]
 [ext_resource type="PackedScene" uid="uid://cs88xpu61dhwp" path="res://Houses/coin_house.tscn" id="7_7t85d"]
 [ext_resource type="PackedScene" uid="uid://dlyyviojwkopk" path="res://Houses/BarbHouse.tscn" id="7_jcmmf"]
 
@@ -40,15 +40,7 @@ position = Vector2(229, 32)
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="Tree" parent="Objects" instance=ExtResource("5_grsx7")]
-position = Vector2(180, 30)
-
-[node name="Tree2" parent="Objects" instance=ExtResource("5_grsx7")]
-position = Vector2(180, 75)
-
-[node name="Tree3" parent="Objects" instance=ExtResource("5_grsx7")]
-position = Vector2(180, 124)
+script = ExtResource("6_du07w")
 
 [node name="Houses" type="Node2D" parent="."]
 y_sort_enabled = true
