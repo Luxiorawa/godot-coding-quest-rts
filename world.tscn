@@ -36,7 +36,7 @@ zoom_max = null
 y_sort_enabled = true
 
 [node name="Unit" parent="Units" instance=ExtResource("3_p0cuk")]
-position = Vector2(114, 66)
+position = Vector2(229, 32)
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -54,7 +54,7 @@ position = Vector2(180, 124)
 y_sort_enabled = true
 
 [node name="BarbHouse" parent="Houses" instance=ExtResource("7_jcmmf")]
-position = Vector2(27, 23)
+position = Vector2(76, 55)
 
 [node name="Ressources" type="Node2D" parent="."]
 

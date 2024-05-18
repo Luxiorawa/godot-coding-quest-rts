@@ -11,6 +11,12 @@ func _ready() -> void:
 	updateMap()
 
 func updateMap() -> void:
+	var housesNode: Node2D = get_node("Houses")
+	var ressourcesNode: Node2D = get_node("Ressources")
+	var objectsNode: Node2D = get_node("Objects")
+
+	resetMap(housesNode, ressourcesNode, objectsNode)
+
 	var root := get_tree().get_root()
 	var barracksPath := root.get_node("World/Houses")
 	var ressources := root.get_node("World/Ressources")
@@ -22,26 +28,36 @@ func updateMap() -> void:
 		var newBarrack: Sprite2D = barrack.instantiate()
 		newBarrack.name = "Barrack" + str(i)
 		newBarrack.position = originalBarrack.position / 2
-		get_node("Houses").add_child(newBarrack)
+		housesNode.add_child(newBarrack)
 
 	for i in ressources.get_child_count():
 		var originalRessource: CoinHouse = ressources.get_child(i)
 		var newCoinHouse: Sprite2D = coinHouse.instantiate()
 		newCoinHouse.name = "CoinHouse" + str(i)
 		newCoinHouse.position = originalRessource.position / 2
-		get_node("Ressources").add_child(newCoinHouse)
+		ressourcesNode.add_child(newCoinHouse)
 
 	for i in worldObjects.get_child_count():
 		var originalTree: TreeWorldObject = worldObjects.get_child(i)
 		var newTree: Sprite2D = tree.instantiate()
 		newTree.name = "Tree" + str(i)
 		newTree.position = originalTree.position / 2
-		get_node("Objects").add_child(newTree)
+		objectsNode.add_child(newTree)
 
 	for i in unitsPath.get_child_count():
 		var newUnit: Sprite2D = arthax.instantiate()
 		newUnit.name = "Unit" + str(i)
 		get_node("Units").add_child(newUnit)
+
+func resetMap(housesNode: Node2D, ressourcesNode: Node2D, objectsNode: Node2D) -> void:
+	for i in housesNode.get_child_count():
+		housesNode.get_child(i).queue_free()
+
+	for i in ressourcesNode.get_child_count():
+		ressourcesNode.get_child(i).queue_free()
+
+	for i in objectsNode.get_child_count():
+		objectsNode.get_child(i).queue_free()
 
 func _process(_delta: float) -> void:
 	var root := get_tree().get_root()

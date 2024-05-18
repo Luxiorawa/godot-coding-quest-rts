@@ -35,5 +35,12 @@ func startChopping() -> void:
 	timer.start()
 
 func treeChopped() -> void:
+	var minimapPath: Minimap = get_tree().get_root().get_node("World/UI/Mini-map/SubViewportContainer/SubViewport")
+	
 	Game.Wood += 10
+	
 	queue_free()
+	await tree_exited	
+
+	# Dans la fonction _ready() de la minimap, il y'a la fonction updateMap() qui va récupérer les différents "objets" instantié dans le jeu, et les "recréer" dans la minimap.
+	minimapPath._ready()

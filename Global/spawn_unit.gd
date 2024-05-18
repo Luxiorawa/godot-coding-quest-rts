@@ -18,6 +18,8 @@ func _on_yes_pressed() -> void:
 	rng.randomize()
 	var randomPosX := rng.randi_range(-50, 50)
 	var randomPosY := rng.randi_range(-50, 50)
+	var unitCount := unitPath.get_child_count()
+	newUnit.name = "Unit" + str(unitCount + 1)
 	newUnit.position = housePosition + Vector2(randomPosX, randomPosY)
 	unitPath.add_child(newUnit)
 
